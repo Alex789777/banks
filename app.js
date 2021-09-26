@@ -5,6 +5,8 @@ const Bank = require('./models/bank')
 //const {v4}= require('uuid')
 const app = express()
 
+const PORT = process.env.PORT || 80
+
 // let BANKS = [
 //     { id: v4(), name: 'Приват', rate: 12, amount: 10000000, min: 25, term: 240 }
 // ]
@@ -57,7 +59,7 @@ async function start() {
                 // useFindAndModify: false
             }, () => { console.log('mongodb connected') })
 
-        app.listen(3000, () => {
+        app.listen(PORT, () => {
             console.log('Server started...')
         })
     } catch (e) {
