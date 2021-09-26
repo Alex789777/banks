@@ -70,10 +70,10 @@
         <div class="card mb-3" v-for="bank in banks">
             <div class="card-body">
                 <h5 class="card-title">{{bank.name}}</h5>
-                <p class="card-text">{{bank.rate}} %</p>
-                <p class="card-text">{{bank.amount}} $</p>
-                <p class="card-text">{{bank.min}} %</p>
-                <p class="card-text">{{bank.term}} месяцев</p>
+                <p class="card-text">Процентная ставка: {{bank.rate}} %</p>
+                <p class="card-text">Максимальная сумма кредита: {{bank.amount}} $</p>
+                <p class="card-text">Минимальный первоначальный взнос: {{bank.min}} %</p>
+                <p class="card-text">Срок ссуды: {{bank.term}} месяцев</p>
                 <button class="btn btn-primary" @click="editBankClick(bank._id)" :disabled="!canCreate1">Изменить</button>
                 <button class="btn btn-danger" @click="removeBank(bank._id)" :disabled="!canCreate1">Удалить</button>
                 <button class="btn btn-primary" @click="calcClick(bank._id)">Калькулятор</button>
