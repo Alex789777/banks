@@ -20,44 +20,44 @@
         <div class="form-group mr-5" :style="hide_calc">
             <h5>Калькулятор ипотеки</h5>
             <label for="initloan" class="mr-3">Необходимая сумма $:</label>
-            <input type="number" id="initloan" v-model="form.initloan" @input="change">
+            <input type="number" class="form-control" id="initloan" v-model="form.initloan" @input="change">
         </div>
         <div class="form-group mr-5" :style="hide_calc">
-            <label for="initpay" class="mr-3">Первоначальный взнос $:</label>
-            <input type="number" id="initpay" v-model="form.initpay" @input="change">
+            <label for="initpay" class="mr-3">Первоначальный взнос, $:</label>
+            <input type="number" class="form-control" id="initpay" v-model="form.initpay" @input="change">
         </div>
         <div class="form-group mr-5" :style="hide_calc">
-            <label for="monthpay" class="mr-3">Ежемесячный платеж $:</label>
-            <input disabled type="number" id="monthpay" v-model="form.monthpay">
+            <label for="monthpay" class="mr-3">Ежемесячный платеж, $:</label>
+            <input disabled type="number" class="form-control" id="monthpay" v-model="form.monthpay">
 
         </div>
 
         <div class="form-group mr-5" :style="hide_edit_bank">
             <h5>Добавить/изменить банк:</h5>
             <label for="name" class="mr-3">Название:</label>
-            <input type="text" id="name" v-model="form.name">
+            <input type="text" class="form-control" id="name" v-model="form.name">
         </div>
         <div class="form-group mr-5" :style="hide_edit_bank">
-            <label for="rate" >Процентная ставка:</label>
-            <input type="number" id="rate" v-model="form.rate"> %
+            <label for="rate" >Процентная ставка, %:</label>
+            <input type="number" class="form-control" id="rate" v-model="form.rate">
         </div>
         <div class="form-group mr-5" :style="hide_edit_bank">
-            <label for="amount" >Максимальная сумма кредита ($):</label>
-            <input type="number" id="amount" v-model="form.amount"> $
+            <label for="amount" >Максимальная сумма кредита, $:</label>
+            <input type="number" class="form-control" id="amount" v-model="form.amount">
         </div>
         <div class="form-group mr-5" :style="hide_edit_bank">
-            <label for="min" class="mr-3">Минимальный первоначальный взнос:</label>
-            <input type="number" id="min" v-model="form.min"> %
+            <label for="min" class="mr-3">Минимальный первоначальный взнос, %:</label>
+            <input type="number" class="form-control" id="min" v-model="form.min">
         </div>
         <div class="form-group mr-5" :style="hide_edit_bank">
-            <label for="term" class="mr-3">Срок ссуды:</label>
-            <input type="number" id="term" v-model="form.term"> месяцев
+            <label for="term" class="mr-3">Срок ссуды, месяцев:</label>
+            <input type="number" class="form-control" id="term" v-model="form.term">
         </div>
             <label for="_id" class="mr-3" hidden>_Id</label>
-            <input type="hidden" id="_id" v-model="form._id">
+            <input type="hidden" class="form-control" id="_id" v-model="form._id">
         <div class="form-group mr-5">
-            <button class="btn btn-primary" type="submit" :disabled="!canCreate">Сохранить</button>
-            <button class="btn btn-primary" @click="cancel" :style="hide_calc">Отмена</button>
+            <button class="btn btn-primary btn-sm" type="submit" :disabled="!canCreate">Сохранить</button>
+            <button class="btn btn-primary btn-sm" @click="cancel" :style="hide_calc">Отмена</button>
         </div>
     </form>
 

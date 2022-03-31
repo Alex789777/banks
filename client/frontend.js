@@ -66,7 +66,7 @@ new Vue({
         async editBank(_id) {
             // console.log('вызов ф-ии editBank')
             const {...bank} = this.form
-            const b = await request(`/api/banks/${_id}`, 'PUT', bank)
+            const b = await request(`/api/banks`, 'PUT', bank)
             const idx = this.banks.findIndex(b => b._id === this.form._id)
             this.banks[idx] = b
             this.clearForm()
