@@ -1,18 +1,16 @@
 const express = require ('express')
 const path = require ('path')
 const mongoose = require ('mongoose')
-const router = require ('./router.js')
+const router = require ('./routers/router.js')
 
 const app = express()
 
 const PORT = process.env.PORT || 80
 
+app.use(express.static(path.resolve(__dirname, 'client')))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use('/api', router)
-
-
-app.use(express.static(path.resolve(__dirname, 'client')))
 
 async function start() {
     try{
@@ -24,7 +22,7 @@ async function start() {
             }, () => { console.log('mongodb connected') })
 
         app.listen(PORT, () => {
-            console.log('Server started om port', PORT)
+            console.log(`Server started on port ${PORT} ...`)
         })
     } catch (e) {
         console.log(e);
